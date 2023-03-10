@@ -7,4 +7,8 @@ class MainController extends CoreController {
     {
         $this->show('home');
     }
+    public function contact()
+    {
+        $this->show('contact');
+    }
 }

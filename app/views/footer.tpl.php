@@ -2,8 +2,8 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="">Contact</a></li>
-          <li class="list-inline-item"><a href="">Mentions légales</a></li>
+          <li class="list-inline-item"><a href="<?= $router->generate('contact'); ?>">Contact</a></li>
+          <li class="list-inline-item"><a href="<?= $router->generate('legal-mentions'); ?>">Mentions légales</a></li>
         </ul>
       </div>
     </div>

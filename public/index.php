@@ -35,6 +35,24 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/mentions-legales',
+    [
+        'controller' => 'MainController',
+        'method' => 'legalMentions'
+    ],
+    'legal-mentions'
+);
+$router->map(
+    'GET',
+    '/services',
+    [
+        'controller' => 'MainController',
+        'method' => 'benefits',
+    ],
+    'benefits'
+);
+$router->map(
+    'GET',
     '/404',
     [
         'controller' => 'MainController',

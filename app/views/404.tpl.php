@@ -39,7 +39,7 @@
                         Désolé, la page que vous cherchez est introuvable.
                     </div>
                     <div class="error-actions">
-                        <a href="/Pressim/public" class="btn btn-primary btn-lg">
+                        <a href="<?= $router->generate('home'); ?>" class="btn btn-primary btn-lg">
                             <span class="glyphicon glyphicon-home"></span>
                             Retourner à l'accueil
                         </a>

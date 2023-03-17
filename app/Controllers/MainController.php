@@ -11,4 +11,12 @@ class MainController extends CoreController {
     {
         $this->show('contact');
     }
+    public function legalMentions()
+    {
+        $this->show('legal-mentions');
+    } 
+    public function benefits()
+    {
+        $this->show('benefits');
+    }
 }

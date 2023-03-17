@@ -14,7 +14,7 @@
   <header>
     <section class="container">
       <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?= $router->generate('home'); ?>">
           <img src="" alt="Logo de l'entreprise" width="100">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +23,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Accueil</a>
+              <a class="nav-link" href="<?= $router->generate('home'); ?>">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Prestations</a>
+              <a class="nav-link" href="<?= $router->generate('benefits'); ?>">Prestations</a>
             </li>
             <li class="nav-item">
               <button class="btn btn-primary">Connexion</button>

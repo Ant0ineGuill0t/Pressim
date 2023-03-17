@@ -47,7 +47,7 @@ $router->map(
 $match = $router->match();
 
 if(!is_array($match)) {
-    exit('404');
+    include(__DIR__ . '/../app/views/404.tpl.php');
 } else {
     $controllerToUse = $match['target']['controller'];
     $methodToUse = $match['target']['method'];

@@ -35,6 +35,24 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/mentions-legales',
+    [
+        'controller' => 'MainController',
+        'method' => 'legalMentions'
+    ],
+    'legal-mentions'
+);
+$router->map(
+    'GET',
+    '/services',
+    [
+        'controller' => 'MainController',
+        'method' => 'benefits',
+    ],
+    'benefits'
+);
+$router->map(
+    'GET',
     '/404',
     [
         'controller' => 'MainController',
@@ -47,7 +65,7 @@ $router->map(
 $match = $router->match();
 
 if(!is_array($match)) {
-    exit('404');
+    include(__DIR__ . '/../app/views/404.tpl.php');
 } else {
     $controllerToUse = $match['target']['controller'];
     $methodToUse = $match['target']['method'];

@@ -1,4 +1,9 @@
-/* Couleur de fond et marges */
+@media (max-width: 768px) {
+  .login {
+    position: static;
+  }
+}
+/* Background colors */
 body {
   background-color: #aca788;
 }
@@ -13,7 +18,7 @@ header {
   filter: brightness(0.8) saturate(1.5) contrast(0.8);
 }
 
-/* Bouton de connexion */
+/* login button */
 .navbar-nav .btn-primary {
   background-color: #17a2b8;
   border-color: #17a2b8;
@@ -24,7 +29,7 @@ header {
   border-color: #138496;
 }
 
-/* Liens de la navbar */
+/* navbar link */
 .navbar-nav .nav-link {
   color:#807c62;
   font-weight: 500;
@@ -49,13 +54,33 @@ header {
   background-color: #17a2b8;
   color: white;
 }
+.login {
+  position: fixed;
+  z-index: 9;
+  right:0;
+  top: 0;
+  background-color: #807c62;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #807c62;
+  border-radius: 1em;
+  padding: 1rem;
+  width: 25em;
+  max-width: 100%;
+  display: none;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 footer {
   background-color: #807c62;
   padding: 20px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 9999; /* Si besoin */
+  z-index: 9999; 
   }
   
   footer ul {

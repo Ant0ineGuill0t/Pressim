@@ -22,17 +22,36 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="<?= $router->generate('home'); ?>">Accueil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= $router->generate('benefits'); ?>">Prestations</a>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary">Connexion</button>
+              <button class="btn btn-primary login-button">Connexion</button>
             </li>
           </ul>
         </div>
       </nav>
     </section>
+    <aside class="container login">
+      <button class="close-button btn" aria-label="Fermer" type="button">&Cross;</button>
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <form>
+            <h2>Connexion</h2>
+            <div class="form-group">
+              <label for="email">Adresse mail:</label>
+              <input type="email" class="form-control" id="email" placeholder="adresse mail">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe:</label>
+              <input type="password" class="form-control" id="password" placeholder="mot de passe">
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+          </form>
+        </div>
+      </div>
+    </aside>
   </header>

@@ -8,14 +8,11 @@ const login = {
         CloseButtonElement.addEventListener('click', login.handleLogin);
     },
 
-    show : function() {
-
-        const LoginElement = document.querySelector('.login');
-        LoginElement.classList.add('login--on');
-    },
-
     handleLogin: function(event){
         event.preventDefault();
+        const LoginElement = document.querySelector('.login');
+        LoginElement.classList.toggle('login--on');
+    },
 
-    }
+
 }

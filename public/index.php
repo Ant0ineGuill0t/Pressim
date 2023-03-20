@@ -3,6 +3,7 @@
 // autoload
 
 require '../vendor/autoload.php';
+session_start();
 
 // Debug mode
 $whoops = new \Whoops\Run;

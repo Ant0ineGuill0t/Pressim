@@ -2,10 +2,20 @@
 
 namespace Pressim\Controllers;
 
+use Pressim\Models\User;
+
 class MainController extends CoreController {
     public function home()
     {
-        $this->show('home');
+        $newUser = new User;
+        $userList = $newUser->findAll();
+        $this->show(
+            'home',
+            [
+                'userList' => $userList
+            ]
+    );
+
     }
     public function contact()
     {

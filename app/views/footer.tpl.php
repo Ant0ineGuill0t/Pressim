@@ -13,3 +13,5 @@
   <script src="<?= $viewData['baseUri']; ?>/assets/js/popper.min.js"></script>
   <script src="<?= $viewData['baseUri']; ?>/assets/js/bootstrap.min.js"></script>
   <script src="<?= $viewData['baseUri']; ?>/assets/js/app.js"></script>
+  <script src="<?= $viewData['baseUri']; ?>/assets/js/messages.js"></script>
+  <script src="<?= $viewData['baseUri']; ?>/assets/js/login.js"></script>

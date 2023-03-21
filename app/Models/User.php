@@ -13,7 +13,7 @@ class User {
     private $password;
     private $phonenumber;
 
-    public function find($email)
+    public function findByEmail($email)
     {
         $pdo = Database::getPDO();
         $sql = "SELECT * FROM `user`

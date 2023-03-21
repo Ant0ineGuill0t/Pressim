@@ -2,7 +2,8 @@
 
 namespace Pressim\Controllers;
 
-class CoreController {
+class CoreController 
+{
 
     protected function show($viewName, $viewData = [])
     {

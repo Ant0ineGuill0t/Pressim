@@ -34,12 +34,17 @@
           </ul>
         </div>
       </nav>
+      <?php if(isset($_SESSION['user'])) : 
+        $user = $_SESSION['user'];
+      ?>
+        Bienvenue <?= $user->getName() ?> !
+      <?php endif ?>
     </section>
     <aside class="container login">
       <button class="close-button btn" aria-label="Fermer" type="button">&Cross;</button>
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
-          <form>
+          <form action="" method="post">
             <h2>Connexion</h2>
             <div class="form-group">
               <label for="email">Adresse mail:</label>

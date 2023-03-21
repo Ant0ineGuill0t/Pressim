@@ -26,6 +26,24 @@ $router->map(
     'home'
 );
 $router->map(
+    'POST',
+    '/login',
+    [
+        'controller' => 'MainController',
+        'method' => 'login',
+    ],
+    'home-login'
+);
+$router->map(
+    'GET',
+    '/logout',
+    [
+        'controller' => 'MainController',
+        'method' => 'logout',
+    ],
+    'home-logout'
+);
+$router->map(
     'GET',
     '/contact',
     [

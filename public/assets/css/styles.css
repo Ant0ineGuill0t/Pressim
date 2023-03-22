@@ -12,7 +12,10 @@ header {
   margin-bottom: 20px;
   box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
 }
-
+.img-fluid {
+  max-width: 20em;
+  height: auto;
+}
 /* Logo */
 .navbar-brand img {
   filter: brightness(0.8) saturate(1.5) contrast(0.8);
@@ -55,39 +58,11 @@ header {
   color: white;
 }
 .login {
-  position: fixed;
-  z-index: 9;
-  right:0;
-  top: 0;
-  background-color: #807c62;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #807c62;
   border-radius: 1em;
   padding: 1rem;
-  width: 25em;
   max-width: 100%;
-  display: none;
 }
 
-.login--on {
-  position: fixed;
-  z-index: 9;
-  right:0;
-  top: 0;
-  background-color: #807c62;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #807c62;
-  border-radius: 1em;
-  padding: 1rem;
-  width: 25em;
-  max-width: 100%;
-  display: block;
-}
-.close-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 footer {
   background-color: #807c62;
   padding: 20px 0;

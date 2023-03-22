@@ -11,52 +11,31 @@
     <link rel="stylesheet" href="<?= $viewData['baseUri']; ?>/assets/css/styles.css">
   </head>
 <body>
-  <header>
-    <section class="container">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="<?= $router->generate('home'); ?>">
-          <img src="" alt="Logo de l'entreprise" width="100">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="<?= $router->generate('home'); ?>">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= $router->generate('benefits'); ?>">Prestations</a>
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-primary login-button">Connexion</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <?php if(isset($_SESSION['user'])) : 
-        $user = $_SESSION['user'];
-      ?>
-        Bienvenue <?= $user->getName() ?> !
-      <?php endif ?>
-    </section>
-    <aside class="container login">
-      <button class="close-button btn" aria-label="Fermer" type="button">&Cross;</button>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-          <form action="" method="post">
-            <h2>Connexion</h2>
-            <div class="form-group">
-              <label for="email">Adresse mail:</label>
-              <input type="email" class="form-control" id="email" placeholder="adresse mail">
-            </div>
-            <div class="form-group">
-              <label for="password">Mot de passe:</label>
-              <input type="password" class="form-control" id="password" placeholder="mot de passe">
-            </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-          </form>
-        </div>
+  <header class="container">
+    <nav class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="<?= $router->generate('home'); ?>">
+        <img src="<?= $viewData['baseUri']; ?>/assets/images/logo.png" alt="Logo de l'entreprise" width="100">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="<?= $router->generate('home'); ?>">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= $router->generate('benefits'); ?>">Prestations</a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= $router->generate('login'); ?>" class="btn btn-primary login-button">Connexion</a>
+          </li>
+        </ul>
       </div>
-    </aside>
+    </nav>
+    <?php if(isset($_SESSION['user'])) : 
+      $user = $_SESSION['user'];
+    ?>
+      Bienvenue <?= $user->getName() ?> !
+    <?php endif ?>
   </header>

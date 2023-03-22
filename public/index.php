@@ -26,22 +26,31 @@ $router->map(
     'home'
 );
 $router->map(
+    'GET',
+    '/login',
+    [
+        'controller' => 'UserController',
+        'method' => 'login',
+    ],
+    'login'
+);
+$router->map(
     'POST',
     '/login',
     [
-        'controller' => 'MainController',
-        'method' => 'login',
+        'controller' => 'UserController',
+        'method' => 'connect',
     ],
-    'home-login'
+    'connect'
 );
 $router->map(
     'GET',
     '/logout',
     [
-        'controller' => 'MainController',
+        'controller' => 'UserController',
         'method' => 'logout',
     ],
-    'home-logout'
+    'logout'
 );
 $router->map(
     'GET',

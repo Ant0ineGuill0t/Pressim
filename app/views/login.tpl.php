@@ -6,11 +6,11 @@
         <p>Pour passer une commande sur Pressim, connectez-vous à votre compte. Cela vous permettra de sauvegarder vos informations de livraison pour une expérience d'achat plus rapide et plus facile.</p>
         <div class="form-group">
           <label for="email">Adresse mail:</label>
-          <input type="email" class="form-control" id="email" placeholder="adresse mail">
+          <input name="email" type="email" class="form-control" id="email" placeholder="adresse mail">
         </div>
         <div class="form-group">
           <label for="password">Mot de passe:</label>
-          <input type="password" class="form-control" id="password" placeholder="mot de passe">
+          <input name="password" type="password" class="form-control" id="password" placeholder="mot de passe">
         </div>
         <button type="submit" class="btn btn-primary">Se connecter</button>
       </form>

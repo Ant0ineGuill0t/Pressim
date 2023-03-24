@@ -12,6 +12,11 @@
   </head>
 <body>
   <header class="container">
+
+<?php
+  include 'messages.tpl.php';
+?>
+
     <nav class="navbar navbar-expand-md navbar-light">
       <a class="navbar-brand" href="<?= $router->generate('home'); ?>">
         <img src="<?= $viewData['baseUri']; ?>/assets/images/logo.png" alt="Logo de l'entreprise" width="100">

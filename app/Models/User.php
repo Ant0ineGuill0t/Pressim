@@ -13,7 +13,7 @@ class User {
     private $password;
     private $phonenumber;
 
-    public function findByEmail($email)
+    public static function findByEmail($email)
     {
         $pdo = Database::getPDO();
         $sql = "SELECT * FROM `user`
@@ -25,7 +25,7 @@ class User {
         return $user;
     }
 
-    public function findAll()
+    public static function findAll()
     {
         $pdo = Database::getPDO();
         $sql = 'SELECT * FROM `user`';
@@ -107,6 +107,25 @@ class User {
     public function setPhoneNumber($phone_number)
     {
         $this->phone_number = $phone_number;
+
+        return $this;
+    }
+        /**
+     * Get the value of role
+     */ 
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set the value of role
+     *
+     * @return  self
+     */ 
+    public function setRole($role)
+    {
+        $this->role = $role;
 
         return $this;
     }

@@ -20,15 +20,17 @@ class UserController extends CoreController
             $_SESSION['errorMessages'][]="Email non valide";
         }
         $user = User::findByEmail($email);
+        var_dump($user);
         if ($user === false) {
             $_SESSION['errorMessages'][]="Cet utilisateur n'existe pas !";
         } else {
-            if (password_verify($password, $user->getPassword())) {
+            if ($password === $user->getPassword()) {
                 $_SESSION['user'] = $user;
                 $_SESSION['successMessages'][]="Connexion réussie!";
             } else {
                 $_SESSION['errorMessages'][]="Le mot de passe n'est pas correct";
             }
         }
+        $this->redirect('home');
     }
 }

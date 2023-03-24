@@ -45,6 +45,24 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/creation-compte',
+    [
+        'controller' => 'UserController',
+        'method' => 'add',
+    ],
+    'account-add'
+);
+$router->map(
+    'POST',
+    '/creation-compte',
+    [
+        'controller' => 'UserController',
+        'method' => 'create',
+    ],
+    'account-create'
+);
+$router->map(
+    'GET',
     '/logout',
     [
         'controller' => 'UserController',

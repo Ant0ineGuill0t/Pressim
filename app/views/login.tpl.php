@@ -15,7 +15,7 @@
         <button type="submit" class="btn btn-primary">Se connecter</button>
       </form>
       <div class="mt-3">
-        <p>Vous n'avez pas de compte ? <a href="">Créez-en un maintenant</a>.</p>
+        <p>Vous n'avez pas de compte ? <a href="<?= $router->generate('account-add'); ?>">Créez-en un maintenant</a>.</p>
       </div>
     </div>
   </div>

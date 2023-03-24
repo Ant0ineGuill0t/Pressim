@@ -41,4 +41,18 @@ class UserController extends CoreController
             $this->redirect('home');
         }
     }
+    public function add()
+    {
+        $this->show('account-add');
+    }
+    public function create()
+    {
+        $email = filter_input(INPUT_POST, 'mail', FILTER_VALIDATE_EMAIL);
+        $password = filter_input(INPUT_POST, 'password');
+        $confirmedPassword = filter_input( INPUT_POST, 'confirmed-password');
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $phoneNumber = filter_input(INPUT_POST, 'phone-number');
+        $role = 1;
+        
+    }
 }

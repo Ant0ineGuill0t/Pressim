@@ -33,4 +33,12 @@ class UserController extends CoreController
         }
         $this->redirect('home');
     }
+    public function logout()
+    {
+        if(isset($_SESSION['user'])){
+            unset($_SESSION['user']);
+          $_SESSION['successMessages'][] = "Déconnexion réussie, à bientot !";
+            $this->redirect('home');
+        }
+    }
 }

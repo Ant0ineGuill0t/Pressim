@@ -31,10 +31,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->generate('benefits'); ?>">Prestations</a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= $router->generate('login'); ?>" class="btn btn-primary login-button">Connexion</a>
-          </li>
+            <?php if(isset($_SESSION['user'])) :?>
+              <li class="nav-item">
+                  <a class="nav-link  btn-primary" href="<?= $router->generate('logout') ?>">Déconnexion</a>
+              </li>
+              <?php else : ?>
+                  <li class="nav-item">
+                      <a class="nav-link login-button btn-primary" href="<?= $router->generate('login') ?>">Connexion</a>
+                  </li>
+            <?php endif; ?>
         </ul>
       </div>
     </nav>

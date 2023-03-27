@@ -22,4 +22,8 @@ class CoreController
         header('Location: ' . $router->generate($routeName));
         exit;
     }
+    public function addError($message)
+    {
+        $_SESSION['errorMessages'][] = $message;
+    }
 }

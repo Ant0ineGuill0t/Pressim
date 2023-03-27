@@ -33,6 +33,28 @@ class User {
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $results;  
     }
+    public function insert()
+    {
+        $pdo = Database::getPDO();
+        $sql = "
+            INSERT INTO `user` (email, password, name, phone_number, role)
+            VALUES (:email,:password,:name,:phone_number,:role)
+        ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':email', $this->email);
+        $pdoStatement->bindValue(':password', $this->password);
+        $pdoStatement->bindValue(':name', $this->name);
+        $pdoStatement->bindValue(':phone_number', $this->phone_number);
+        $pdoStatement->bindValue(':role', $this->role);
+        $success = $pdoStatement->execute();
+
+        if ($success) {
+            $this->id = $pdo->lastInsertId();
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Get the value of name
      */ 
@@ -117,7 +139,6 @@ class User {
     {
         return $this->role;
     }
-
     /**
      * Set the value of role
      *
@@ -129,5 +150,4 @@ class User {
 
         return $this;
     }
-
 }

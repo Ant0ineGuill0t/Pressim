@@ -8,18 +8,7 @@ class MainController extends CoreController
 {
     public function home()
     {
-        $newUser = new User();
-        $userList = $newUser->findAll();
-        $this->show(
-            'home',
-            [
-                'userList' => $userList
-            ]
-        );
-    }
-    public function contact()
-    {
-        $this->show('contact');
+        $this->show('home');
     }
     public function legalMentions()
     {

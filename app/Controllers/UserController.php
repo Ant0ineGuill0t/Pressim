@@ -20,7 +20,6 @@ class UserController extends CoreController
             $_SESSION['errorMessages'][]="Email non valide";
         }
         $user = User::findByEmail($email);
-        var_dump($user);
         if ($user === false) {
             $_SESSION['errorMessages'][]="Cet utilisateur n'existe pas !";
         } else {

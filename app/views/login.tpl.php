@@ -1,7 +1,7 @@
 <aside class="container login">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8 col-sm-10">
-      <form action="" method="post">
+      <form action="" method="POST">
         <h2>Connexion</h2>
         <p>Pour passer une commande sur Pressim, connectez-vous à votre compte. Cela vous permettra de sauvegarder vos informations de livraison pour une expérience d'achat plus rapide et plus facile.</p>
         <div class="form-group">

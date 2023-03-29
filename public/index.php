@@ -74,10 +74,19 @@ $router->map(
     'GET',
     '/contact',
     [
-        'controller' => 'MainController',
+        'controller' => 'ContactController',
         'method' => 'contact',
     ],
     'contact'
+);
+$router->map(
+    'POST',
+    '/contact',
+    [
+        'controller' => 'ContactController',
+        'method' => 'create',
+    ],
+    'contact-form'
 );
 $router->map(
     'GET',
@@ -96,6 +105,15 @@ $router->map(
         'method' => 'benefits',
     ],
     'benefits'
+);
+$router->map(
+    'GET',
+    '/depot',
+    [
+        'controller' => 'OrderController',
+        'method' => 'order',
+    ],
+    'order'
 );
 $router->map(
     'GET',

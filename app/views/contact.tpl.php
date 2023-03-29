@@ -4,10 +4,10 @@
 		<p class="text-center mb-5">N'hésitez pas à nous contacter pour toute question ou demande.</p>
 		<div class="row justify-content-center">
 			<div class="col-md-8">
-				<form action="#" method="POST">
+				<form action="" method="POST">
 					<div class="form-group">
 						<label for="nom">Nom :</label>
-						<input type="text" id="nom" name="nom" class="form-control" required>
+						<input type="text" id="nom" name="name" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label for="email">Email :</label>

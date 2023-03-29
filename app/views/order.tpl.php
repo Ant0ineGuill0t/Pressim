@@ -1,32 +1,33 @@
-<section class="container mt-4">
-    <h2 class="mb-4">Commande Pressing</h2>
-    <form>
-        <div class="form-group">
-            <label for="date_depot">Date de dépôt:</label>
-            <input type="date" class="form-control" id="date_depot" required>
-        </div>
-
-        <div class="form-group">
-            <label for="prestation_lavage">Lavage:</label>
-            <select class="form-control" id="prestation_lavage" required>
-                <option value="">Sélectionnez un lavage</option>
-                <option value="lavage1">Lavage 1</option>
-                <option value="lavage2">Lavage 2</option>
-                <option value="lavage3">Lavage 3</option>
-                <option value="lavage4">Lavage 4</option>
-                <option value="lavage5">Lavage 5</option>
-                <option value="lavage6">Lavage 6</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="prestation_repassage">repassage:</label>
-            <select class="form-control" id="prestation_repassage" required>
-                <option value="">Sélectionnez un repassage</option>
-                <option value="repassage1">repassage 1</option>
-                <option value="repassage2">repassage 2</option>
-                <option value="repassage3">repassage 3</option>
-                <option value="repassage4">repassage 4</option>
-                <option value="repassage5">repassage 5</option>
-                <option value="repassage6">repassage 6</option>
-            </select>
-        </div>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="type-lavage">Type de lavage:</label>
+      <select class="form-control" id="type-lavage">
+        <option value="0">-- Sélectionnez un type de lavage --</option>
+        <option value="1">Lavage chemise</option>
+        <option value="2">Lavage pantalon</option>
+        <option value="3">Lavage jupe</option>
+        <option value="4">Lavage veste</option>
+        <option value="5">Lavage manteau</option>
+        <option value="6">Lavage couette</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="quantite">Quantité:</label>
+      <input type="number" class="form-control" id="quantite" min="1" max="99">
+    </div>
+    <div class="form-group">
+      <label for="date-depot">Date de dépôt:</label>
+      <input type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>">
+    </div>
+    <div class="form-group">
+      <label for="date-retour">Date de retour:</label>
+      <input type="text" class="form-control" id="date-retour" readonly>
+    </div>
+    <div class="form-group">
+      <label for="prix-total">Prix total:</label>
+      <input type="text" class="form-control" id="prix-total" readonly>
+    </div>
+    <button type="submit" class="btn btn-primary">Passer la commande</button>
+  </form>
+</div>

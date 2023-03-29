@@ -1,5 +1,4 @@
 <section  class="container">
-
   <div class="row">
     <div class="col-md-6">
       <img src="<?= $viewData['baseUri']; ?>/assets/images/repassage.jpg" alt="Photo de l'article 1" class="img-fluid">

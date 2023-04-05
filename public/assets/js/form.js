@@ -1,0 +1,5 @@
+const form = {
+    init : function() {
+        
+    }
+}

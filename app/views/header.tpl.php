@@ -50,10 +50,10 @@
             <li class="nav-item">
                 <a class="nav-link  btn-primary text-center" href="<?= $router->generate('logout') ?>">Déconnexion</a>
             </li>
-            <?php else : ?>
-                <li class="nav-item">
-                    <a class="nav-link login-button btn-primary text-center" href="<?= $router->generate('login') ?>">Connexion</a>
-                </li>
+          <?php else : ?>
+            <li class="nav-item">
+                <a class="nav-link login-button btn-primary text-center" href="<?= $router->generate('login') ?>">Connexion</a>
+            </li>
           <?php endif; ?>
         </ul>
       </div>

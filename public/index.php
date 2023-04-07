@@ -113,6 +113,15 @@ $router->map(
         'controller' => 'OrderController',
         'method' => 'order',
     ],
+    'order-form'
+);
+$router->map(
+    'POST',
+    '/depot',
+    [
+        'controller' => 'OrderController',
+        'method' => 'create',
+    ],
     'order'
 );
 $router->map(

@@ -1,6 +1,12 @@
 const login = {
    init : function() {
-      const loginButtonElement = document.querySelector('.login-button');
+      loginButtonElement = document.querySelector('.login-button');
+      if(loginButtonElement){
+         login.handleLogin()
+      }
+   },
+   handleLogin: function() {
+      
       var currentUrl = window.location.pathname;
       if (currentUrl === '/Pressim/public/login' || currentUrl === '/Pressim/public/creation-compte') {
       loginButtonElement.parentNode.style.display = 'none';
@@ -13,5 +19,5 @@ const login = {
             alert.remove();
          }, 5000);
          });
-   },
+   }
 }

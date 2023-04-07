@@ -1,21 +1,17 @@
 const login = {
-
-    init : function() {
-
-        const loginButtonElement = document.querySelector('.login-button');
-        loginButtonElement.addEventListener('click', login.handleLogin);
-        const CloseButtonElement = document.querySelector('.close-button');
-        CloseButtonElement.addEventListener('click', login.handleLogin);
-    },
-
-    show : function() {
-
-        const LoginElement = document.querySelector('.login');
-        LoginElement.classList.add('login--on');
-    },
-
-    handleLogin: function(event){
-        event.preventDefault();
-
-    }
+   init : function() {
+      const loginButtonElement = document.querySelector('.login-button');
+      var currentUrl = window.location.pathname;
+      if (currentUrl === '/Pressim/public/login' || currentUrl === '/Pressim/public/creation-compte') {
+      loginButtonElement.parentNode.style.display = 'none';
+      } else {
+      loginButtonElement.parentNode.style.display = 'block';
+      }
+      const alerts = document.querySelectorAll('.alert');
+      alerts.forEach(alert => {
+         setTimeout(() => {
+            alert.remove();
+         }, 5000);
+         });
+   },
 }

@@ -5,7 +5,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Lavage de chemises</h5>
+                        <h3 class="card-title">Lavage de chemises</h3>
                         <p class="card-text">Nous lavons vos chemises en utilisant des techniques et produits de qualité pour un résultat impeccable.</p>
                     </div>
                 </div>
@@ -13,7 +13,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Nettoyage à l'eau</h5>
+                        <h3 class="card-title">Nettoyage à l'eau</h3>
                         <p class="card-text">Nous offrons un nettoyage à sec pour vos vêtements délicats, tels que les costumes, les robes de soirée, etc.</p>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Repassage</h5>
+                        <h3 class="card-title">Repassage</h3>
                         <p class="card-text">Nous repassons vos vêtements avec soin pour leur donner une apparence impeccable et professionnelle.</p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Lavage de couettes</h5>
+                        <h3 class="card-title">Lavage de couettes</h3>
                         <p class="card-text">Nous lavons vos couettes en utilisant des techniques et produits de qualité pour les maintenir douces et confortables.</p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Teinturerie</h5>
+                        <h3 class="card-title">Teinturerie</h3>
                         <p class="card-text">Nous offrons des services de teinturerie pour donner une seconde vie à vos vêtements défraîchis.</p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ourlet simple</h5>
+                        <h3 class="card-title">Ourlet simple</h3>
                         <p class="card-text">Nous réalisons des ourlets simples sur vos pantalons et jupes pour une coupe ajustée à votre taille.</p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ourlet invisible</h5>
+                        <h3 class="card-title">Ourlet invisible</h3>
                         <p class="card-text">Nous réalisons des ourlets invisibles sur vos vêtements pour une finition élégante et discrète.</p>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ourlet de rideaux</h5>
+                        <h3 class="card-title">Ourlet de rideaux</h3>
                         <p class="card-text">Nous réalisons des ourlets de rideaux pour les ajuster à la taille de vos fenêtres et leur donner une finition professionnelle.</p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Réparation de fermetures éclair</h5>
+                        <h3 class="card-title">Réparation de fermetures éclair</h3>
                         <p class="card-text">Nous réparons les fermetures éclair de vos vêtements, sacs et autres accessoires pour une utilisation prolongée.</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
             <div class="col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Réparation de déchirures</h5>
+                        <h3 class="card-title">Réparation de déchirures</h3>
                         <p class="card-text">Nous réparons les déchirures de vos vêtements pour leur donner une seconde vie et éviter les achats inutiles.</p>
                     </div>
                 </div>

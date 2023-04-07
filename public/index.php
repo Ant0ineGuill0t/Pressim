@@ -3,6 +3,7 @@
 // autoload
 
 require '../vendor/autoload.php';
+session_start();
 
 // Debug mode
 $whoops = new \Whoops\Run;
@@ -26,12 +27,66 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/login',
+    [
+        'controller' => 'UserController',
+        'method' => 'login',
+    ],
+    'login'
+);
+$router->map(
+    'POST',
+    '/login',
+    [
+        'controller' => 'UserController',
+        'method' => 'connect',
+    ],
+    'connect'
+);
+$router->map(
+    'GET',
+    '/creation-compte',
+    [
+        'controller' => 'UserController',
+        'method' => 'add',
+    ],
+    'account-add'
+);
+$router->map(
+    'POST',
+    '/creation-compte',
+    [
+        'controller' => 'UserController',
+        'method' => 'create',
+    ],
+    'account-create'
+);
+$router->map(
+    'GET',
+    '/logout',
+    [
+        'controller' => 'UserController',
+        'method' => 'logout',
+    ],
+    'logout'
+);
+$router->map(
+    'GET',
     '/contact',
     [
-        'controller' => 'MainController',
+        'controller' => 'ContactController',
         'method' => 'contact',
     ],
     'contact'
+);
+$router->map(
+    'POST',
+    '/contact',
+    [
+        'controller' => 'ContactController',
+        'method' => 'create',
+    ],
+    'contact-form'
 );
 $router->map(
     'GET',
@@ -50,6 +105,15 @@ $router->map(
         'method' => 'benefits',
     ],
     'benefits'
+);
+$router->map(
+    'GET',
+    '/depot',
+    [
+        'controller' => 'OrderController',
+        'method' => 'order',
+    ],
+    'order'
 );
 $router->map(
     'GET',

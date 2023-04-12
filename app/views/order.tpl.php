@@ -10,7 +10,7 @@ $vetements = array(
 $items = array_keys($vetements);
 ?>
 <div class="container">
-  <form>
+  <form action="" method="POST">
     <?php foreach ($vetements as $vetement => $info) { ?>
       <div class="form-group">
         <label>Lavage <?php echo $info["label"]; ?></label>
@@ -19,7 +19,7 @@ $items = array_keys($vetements);
           <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-0">Pas de lavage</label>
           <?php for ($i = 1; $i <= 5; $i++) { ?>
             <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>" value="<?php echo $info["prix"] * $i; ?>" autocomplete="off">
-            <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?><?php echo $info["label"]; ?> (<?php echo $info["prix"] * $i; ?> €)</label>
+            <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?> <?php echo $info["label"]; ?> (<?php echo $info["prix"] * $i; ?> €)</label>
           <?php } ?>
         </div>
       </div>
@@ -27,7 +27,7 @@ $items = array_keys($vetements);
 
     <div class="form-group">
       <label for="date-depot">Date de dépôt:</label>
-      <input type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>">
+      <input type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>" required>
     </div>
 
     <div class="form-group">

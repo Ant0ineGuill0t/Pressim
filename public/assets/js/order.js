@@ -22,22 +22,22 @@ const order = {
   handleTotalPrice: function() {
     const items = ['chemise', 'pantalon', 'jupe', 'veste', 'manteau'];
     const inputs = {};
-    const totalPriceSpan = document.querySelector('#total-price');
-  
+    const totalPriceInput = document.querySelector('#total-price'); 
+    
     const handleUpdateTotalPrice = () => {
       let totalPrice = 0;
       items.forEach((item) => {
-        let selectedValue = 0;
+        let selectedData = 0;
         inputs[item].forEach((input) => {
           if (input.checked) {
-            selectedValue = parseInt(input.value);
+            selectedData = parseInt(input.getAttribute("data"));
           }
         });
-        totalPrice += selectedValue;
+        totalPrice += selectedData;
       });
-      totalPriceSpan.textContent = totalPrice;
+      totalPriceInput.value = totalPrice;
     };
-  
+    
     items.forEach((item) => {
       inputs[item] = document.querySelectorAll(`input[name="${item}"]`);
       inputs[item].forEach((input) => {
@@ -45,6 +45,7 @@ const order = {
       });
     });
   },
+
   handleRecoveryDate: function() {
     document.querySelector('#date-depot').addEventListener('change', function() {
       const depot = moment(this.value);

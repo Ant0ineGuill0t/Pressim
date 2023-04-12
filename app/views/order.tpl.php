@@ -15,10 +15,10 @@ $items = array_keys($vetements);
       <div class="form-group">
         <label>Lavage <?php echo $info["label"]; ?></label>
         <div class="btn-group d-flex" role="group" aria-label="Lavage <?php echo $info["label"]; ?>">
-          <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-0" value="0" autocomplete="off" checked>
+          <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-0" value="0" data="0" autocomplete="off" checked>
           <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-0">Pas de lavage</label>
           <?php for ($i = 1; $i <= 5; $i++) { ?>
-            <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>" value="<?php echo $info["prix"] * $i; ?>" autocomplete="off">
+            <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>" value=<?php echo $i ?> data="<?php echo $info["prix"] * $i; ?>" autocomplete="off">
             <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?> <?php echo $info["label"]; ?> (<?php echo $info["prix"] * $i; ?> €)</label>
           <?php } ?>
         </div>

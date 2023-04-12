@@ -27,13 +27,13 @@ const order = {
     const handleUpdateTotalPrice = () => {
       let totalPrice = 0;
       items.forEach((item) => {
-        let selectedValue = 0;
+        let selectedData = 0;
         inputs[item].forEach((input) => {
           if (input.checked) {
-            selectedValue = parseInt(input.value);
+            selectedData = parseInt(input.getAttribute("data"));
           }
         });
-        totalPrice += selectedValue;
+        totalPrice += selectedData;
       });
       totalPriceInput.value = totalPrice;
     };

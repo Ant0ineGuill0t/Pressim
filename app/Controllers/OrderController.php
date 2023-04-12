@@ -37,7 +37,7 @@ class OrderController extends CoreController
         $newOrder->setCoat($coat);
         $success = $newOrder->insert();
         if($success) {
-            $_SESSION['successMessages'][] = "Commande bien crée !";
+            $_SESSION['successMessages'][] = "Commande numéro ". $newOrder->getId() . " bien crée !";
             $this->redirect('home');
         }
     }

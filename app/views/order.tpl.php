@@ -27,17 +27,17 @@ $items = array_keys($vetements);
 
     <div class="form-group">
       <label for="date-depot">Date de dépôt:</label>
-      <input type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>" required>
+      <input name="deposit-date" type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>" required>
     </div>
 
     <div class="form-group">
       <label for="date-retour">Date de retour:</label>
-      <input type="text" class="form-control" id="date-retour" readonly>
+      <input name="recovery-date" type="text" class="form-control" id="date-retour" readonly>
     </div>
 
     <div class="form-group">
       <label>Prix total:</label>
-      <input type="text" class="form-control" id="total-price" readonly>
+      <input name="amount" type="text" class="form-control" id="total-price" readonly>
     </div>
 
     <button type="submit" class="btn btn-primary">Passer la commande</button>

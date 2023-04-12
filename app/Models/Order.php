@@ -16,6 +16,38 @@ class Order {
     private $coat;
     private $skirt;
 
+    public static function findAll()
+    {
+        $pdo = Database::getPDO();
+        $sql = 'SELECT * FROM `order`';
+        $pdoStatement = $pdo->query($sql);
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
+        return $results;  
+    }
+    public function insert()
+    {
+        $pdo = Database::getPDO();
+        $sql = "
+            INSERT INTO `order` (deposit_date, recovery_date, amount, pants, jacket, shirt, coat, skirt)
+            VALUES (:deposit_date,:recovery_date,:amount,:pants,:jacket, :shirt, :coat, :jacket)
+        ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':deposit_date', $this->deposit_date);
+        $pdoStatement->bindValue(':recovery_date', $this->recovery_date);
+        $pdoStatement->bindValue(':amount', $this->amount);
+        $pdoStatement->bindValue(':pants', $this->pants);
+        $pdoStatement->bindValue(':jacket', $this->jacket);
+        $pdoStatement->bindValue(':shirt', $this->shirt);
+        $pdoStatement->bindValue(':coat', $this->coat);
+        $pdoStatement->bindValue(':skirt', $this->skirt);
+        $success = $pdoStatement->execute();
+
+        if ($success) {
+            $this->id = $pdo->lastInsertId();
+            return true;
+        }
+    }
+       
     /**
      * Get the value of number
      */ 
@@ -39,6 +71,16 @@ class Order {
     public function getDepositDate()
     {
         return $this->deposit_date;
+    }
+    /**
+     * Set the value of depositDate
+     *
+     * @return  self
+     */ 
+    public function setDepositDate($deposit_date)
+    {
+        $this->deposit_date = $deposit_date;
+        return $this;
     }
     /**
      * Get the value of recoveryDate
@@ -123,6 +165,23 @@ class Order {
     public function setCoat($coat)
     {
         $this->coat = $coat;
+        return $this;
+    }
+    /**
+     * Get the value of jacket
+     */ 
+    public function getJacket()
+    {
+        return $this->jacket;
+    }
+    /**
+     * Set the value of jacket
+     *
+     * @return  self
+     */ 
+    public function setJacket($jacket)
+    {
+        $this->jacket = $jacket;
         return $this;
     }
     /**

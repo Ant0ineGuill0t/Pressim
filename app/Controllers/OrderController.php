@@ -16,6 +16,6 @@ class OrderController extends CoreController
         $jupe = filter_input(INPUT_POST, 'jupe',FILTER_SANITIZE_NUMBER_INT);
         $veste = filter_input(INPUT_POST, 'veste',FILTER_SANITIZE_NUMBER_INT);
         $manteau = filter_input(INPUT_POST, 'manteau',FILTER_SANITIZE_NUMBER_INT);
-        var_dump($chemise, $pantalon, $jupe, $veste, $manteau);
+        
     }
 }

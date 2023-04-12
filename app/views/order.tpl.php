@@ -37,10 +37,7 @@ $items = array_keys($vetements);
 
     <div class="form-group">
       <label>Prix total:</label>
-      <div class="input-group">
-        <span class="input-group-text">€</span>
-        <span id="total-price" class="form-control"></span>
-      </div>
+      <input type="text" class="form-control" id="total-price" readonly>
     </div>
 
     <button type="submit" class="btn btn-primary">Passer la commande</button>

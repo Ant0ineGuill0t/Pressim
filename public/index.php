@@ -133,7 +133,15 @@ $router->map(
     ],
     '404'
 );
-
+$router->map(
+    'GET',
+    '/admin',
+    [
+        'controller' => 'AdminController',
+        'method' => 'admin',
+    ],
+    'back-office'
+);
 // Match routes
 $match = $router->match();
 

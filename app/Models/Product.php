@@ -49,6 +49,22 @@ class Product
         }
         return false;
     }
+    public function update()
+    {
+        $pdo = Database::getPDO();
+        $sql = "
+            UPDATE `product`
+            SET
+                name = :name,
+                price = :price
+            WHERE id = :id    
+        ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':name', $this->name);
+        $pdoStatement->bindValue(':price', $this->price);
+        $pdoStatement->bindValue(':id', $this->id);
+        $pdoStatement->execute();
+    }
     public function delete()
     {
         $pdo = Database::getPDO();

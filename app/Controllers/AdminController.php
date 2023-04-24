@@ -4,6 +4,7 @@ namespace Pressim\Controllers;
 
 use Pressim\Models\User;
 use Pressim\Models\Order;
+use Pressim\Models\Product;
 
 class AdminController extends CoreController
 {

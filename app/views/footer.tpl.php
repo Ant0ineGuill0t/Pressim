@@ -16,3 +16,4 @@
 <script src="<?= $viewData['baseUri']; ?>/assets/js/login.js"></script>
 <script src="<?= $viewData['baseUri']; ?>/assets/js/order.js"></script>
 <script src="<?= $viewData['baseUri']; ?>/assets/js/form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>

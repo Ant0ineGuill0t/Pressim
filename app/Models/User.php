@@ -13,6 +13,17 @@ class User {
     private $password;
     private $phonenumber;
 
+    public static function find($id)
+    {
+        $pdo = Database::getPDO();
+        $sql = "SELECT * FROM `user`
+        WHERE `id` = :id";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $id);
+        $pdoStatement->execute();
+        $user = $pdoStatement->fetchObject(self::class);
+        return $user;
+    }
     public static function findByEmail($email)
     {
         $pdo = Database::getPDO();
@@ -53,6 +64,15 @@ class User {
             return true;
         }
         return false;
+    }
+    public function delete()
+    {
+        $pdo = Database::getPDO();
+        $sql = " DELETE FROM `user` WHERE `id`= :id ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $this->id);
+        $success = $pdoStatement->execute();
+        return $success;
     }
     /**
      * Get the value of id

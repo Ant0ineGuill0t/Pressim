@@ -72,6 +72,7 @@
                         <td><?php echo $userObject->getEmail(); ?></td>
                         <td><?php echo $userObject->getPhoneNumber(); ?></td>
                         <td class="text-end">
+                            <a href="#" class="btn btn-warning">modifier</a>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $userObject->getId() ?>">supprimer</button>
                             <div class="modal fade" id="confirm-delete-<?= $userObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $userObject->getId() ?>-label" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -113,6 +114,7 @@
                         <td><?php echo $productObject->getName(); ?></td>
                         <td><?php echo $productObject->getPrice(); ?></td>
                         <td class="text-end">
+                            <a href="#" class="btn btn-warning">modifier</a>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $productObject->getId() ?>">supprimer</button>
                             <div class="modal fade" id="confirm-delete-<?= $productObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $productObject->getId() ?>-label" aria-hidden="true">
                                 <div class="modal-dialog">

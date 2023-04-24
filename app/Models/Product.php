@@ -11,6 +11,17 @@ class Product
     private $name;
     private $price;
 
+    public static function find($id)
+    {
+        $pdo = Database::getPDO();
+        $sql = "SELECT * FROM `product`
+        WHERE `id` = :id";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $id);
+        $pdoStatement->execute();
+        $product = $pdoStatement->fetchObject(self::class);
+        return $product;
+    }
     public static function findAll()
     {
         $pdo = Database::getPDO();
@@ -37,6 +48,15 @@ class Product
             return true;
         }
         return false;
+    }
+    public function delete()
+    {
+        $pdo = Database::getPDO();
+        $sql = " DELETE FROM `product` WHERE `id`= :id ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $this->id);
+        $success = $pdoStatement->execute();
+        return $success;
     }
      /**
      * Get the value of id

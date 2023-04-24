@@ -28,6 +28,26 @@
                             <li>Jupe : <?php echo $orderObject->getSkirt(); ?></li>
                         </ul>
                         </td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $orderObject->getId() ?>">supprimer</button>
+                            <div class="modal fade" id="confirm-delete-<?= $orderObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $orderObject->getId() ?>-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirm-delete-<?= $orderObject->getId() ?>-label">Confirmation de suppression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Êtes-vous sûr de vouloir supprimer cet utilisateur ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <a href="<?= $router->generate('order-delete',['id' => $orderObject->getId()]) ?>" class="btn btn-danger">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -51,6 +71,26 @@
                         <td><?php echo $userObject->getName(); ?></td>
                         <td><?php echo $userObject->getEmail(); ?></td>
                         <td><?php echo $userObject->getPhoneNumber(); ?></td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $userObject->getId() ?>">supprimer</button>
+                            <div class="modal fade" id="confirm-delete-<?= $userObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $userObject->getId() ?>-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirm-delete-<?= $userObject->getId() ?>-label">Confirmation de suppression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Êtes-vous sûr de vouloir supprimer cet utilisateur ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <a href="<?= $router->generate('user-delete',['id' => $userObject->getId()]) ?>" class="btn btn-danger">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -65,15 +105,33 @@
                     <tr>
                     <th>Nom</th>
                     <th>prix</th>
-                    <th>Numéro de téléphone</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($viewData['userList'] as $userObject): ?>
+                    <?php foreach($viewData['productList'] as $productObject): ?>
                     <tr>
-                        <td><?php echo $userObject->getName(); ?></td>
-                        <td><?php echo $userObject->getEmail(); ?></td>
-                        <td><?php echo $userObject->getPhoneNumber(); ?></td>
+                        <td><?php echo $productObject->getName(); ?></td>
+                        <td><?php echo $productObject->getPrice(); ?></td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $productObject->getId() ?>">supprimer</button>
+                            <div class="modal fade" id="confirm-delete-<?= $productObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $productObject->getId() ?>-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirm-delete-<?= $productObject->getId() ?>-label">Confirmation de suppression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Êtes-vous sûr de vouloir supprimer ce produit ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <a href="<?= $router->generate('product-delete',['id' => $productObject->getId()]) ?>" class="btn btn-danger">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

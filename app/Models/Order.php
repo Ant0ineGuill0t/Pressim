@@ -16,6 +16,17 @@ class Order {
     private $coat;
     private $skirt;
 
+    public static function find($id)
+    {
+        $pdo = Database::getPDO();
+        $sql = "SELECT * FROM `order`
+        WHERE `id` = :id";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $id);
+        $pdoStatement->execute();
+        $order = $pdoStatement->fetchObject(self::class);
+        return $order;
+    }
     public static function findAll()
     {
         $pdo = Database::getPDO();
@@ -46,6 +57,15 @@ class Order {
             $this->id = $pdo->lastInsertId();
             return true;
         }
+    }
+    public function delete()
+    {
+        $pdo = Database::getPDO();
+        $sql = " DELETE FROM `order` WHERE `id`= :id ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':id', $this->id);
+        $success = $pdoStatement->execute();
+        return $success;
     }
     /**
      * Get the value of id

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="<?= $viewData['baseUri']; ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= $viewData['baseUri']; ?>/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= $viewData['baseUri']; ?>/assets/css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   </head>
 <body>
   <header class="container-fluid">

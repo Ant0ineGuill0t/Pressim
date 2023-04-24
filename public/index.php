@@ -142,6 +142,33 @@ $router->map(
     ],
     'back-office'
 );
+$router->map(
+    'GET',
+    '/admin/product/delete/[i:id]',
+    [
+        'method' => 'deleteProduct',
+        'controller' => 'AdminController'
+    ],
+    'product-delete'
+);
+$router->map(
+    'GET',
+    '/admin/user/delete/[i:id]',
+    [
+        'method' => 'deleteUser',
+        'controller' => 'AdminController'
+    ],
+    'user-delete'
+);
+$router->map(
+    'GET',
+    '/admin/order/delete/[i:id]',
+    [
+        'method' => 'deleteOrder',
+        'controller' => 'AdminController'
+    ],
+    'order-delete'
+);
 
 $match = $router->match();
 

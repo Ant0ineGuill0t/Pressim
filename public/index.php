@@ -169,7 +169,24 @@ $router->map(
     ],
     'order-delete'
 );
-
+$router->map(
+    'GET',
+    '/admin/user/update/[i:id]',
+    [
+        'method' => 'viewUpdateUser',
+        'controller' => 'AdminController'
+    ],
+    'user-viewUpdate'
+);
+$router->map(
+    'POST',
+    '/admin/user/update/[i:id]',
+    [
+        'method' => 'updateUser',
+        'controller' => 'AdminController'
+    ],
+    'user-update'
+);
 $match = $router->match();
 
 if(!is_array($match)) {

@@ -65,6 +65,24 @@ class User {
         }
         return false;
     }
+    public function update()
+    {
+        $pdo = Database::getPDO();
+        $sql = "
+            UPDATE `user`
+            SET
+                email = :email,
+                name = :name,
+                phone_number = :phone_number
+            WHERE id = :id    
+        ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':email', $this->email);
+        $pdoStatement->bindValue(':name', $this->name);
+        $pdoStatement->bindValue(':phone_number', $this->phone_number);
+        $pdoStatement->bindValue(':id', $this->id);
+        $pdoStatement->execute();
+    }
     public function delete()
     {
         $pdo = Database::getPDO();

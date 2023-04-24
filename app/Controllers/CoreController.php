@@ -10,7 +10,7 @@ class CoreController
         global $router;
         $baseUri = $_SERVER['BASE_URI'] ?? '';
         $viewData['baseUri'] = $baseUri;
-
+        extract($viewData);
         require __DIR__ . "/../views/header.tpl.php";
         require __DIR__ . "/../views/" . $viewName  .  ".tpl.php";
         require __DIR__ . "/../views/footer.tpl.php";

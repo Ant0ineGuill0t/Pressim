@@ -142,7 +142,7 @@ $router->map(
     ],
     'back-office'
 );
-// Match routes
+
 $match = $router->match();
 
 if(!is_array($match)) {

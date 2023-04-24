@@ -114,7 +114,7 @@
                         <td><?php echo $productObject->getName(); ?></td>
                         <td><?php echo $productObject->getPrice(); ?></td>
                         <td class="text-end">
-                            <a href="#" class="btn btn-warning">modifier</a>
+                            <a href="<?= $router->generate('product-viewUpdate',['id' => $productObject->getId()]) ?>" class="btn btn-warning">modifier</a>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-<?= $productObject->getId() ?>">supprimer</button>
                             <div class="modal fade" id="confirm-delete-<?= $productObject->getId() ?>" tabindex="-1" aria-labelledby="confirm-delete-<?= $productObject->getId() ?>-label" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -138,6 +138,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <a href="<?= $router->generate('product-add')?>" class="btn btn-warning">ajouter</a>
         </div>
     </div>
 </section>

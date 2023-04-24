@@ -144,6 +144,24 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/admin/product/add',
+    [
+        'method' => 'addProduct',
+        'controller' => 'AdminController'
+    ],
+    'product-add'
+);
+$router->map(
+    'POST',
+    '/admin/product/add',
+    [
+        'method' => 'createProduct',
+        'controller' => 'AdminController'
+    ],
+    'product-create'
+);
+$router->map(
+    'GET',
     '/admin/product/delete/[i:id]',
     [
         'method' => 'deleteProduct',
@@ -186,6 +204,24 @@ $router->map(
         'controller' => 'AdminController'
     ],
     'user-update'
+);
+$router->map(
+    'GET',
+    '/admin/product/update/[i:id]',
+    [
+        'method' => 'viewUpdateProduct',
+        'controller' => 'AdminController'
+    ],
+    'product-viewUpdate'
+);
+$router->map(
+    'POST',
+    '/admin/product/update/[i:id]',
+    [
+        'method' => 'updateProduct',
+        'controller' => 'AdminController'
+    ],
+    'product-update'
 );
 $match = $router->match();
 

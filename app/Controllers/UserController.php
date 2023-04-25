@@ -8,11 +8,16 @@ class UserController extends CoreController
 {
     
     public function login(){
-        $this->show('login');
+        $token = $this->generateCSRFToken();
+        $this->show('login', ['token' => $token ]);
     }
 
     public function connect()
     {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            $this->addError("Jeton CSRF invalide");
+            $this->redirect('home');
+          }
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $password = filter_input(INPUT_POST, 'password');
 

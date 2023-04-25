@@ -38,12 +38,6 @@
                     <div class="error-details">
                         Désolé, vous de disposez pas des autorisations requises pour cette page.
                     </div>
-                    <div class="error-actions">
-                        <a href="<?= $router->generate('home'); ?>" class="btn btn-primary btn-lg">
-                            <span class="glyphicon glyphicon-home"></span>
-                            Retourner à l'accueil
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>

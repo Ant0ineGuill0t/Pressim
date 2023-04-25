@@ -11,6 +11,7 @@ $items = array_keys($vetements);
 ?>
 <div class="container">
   <form action="" method="POST">
+    <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
     <?php foreach ($vetements as $vetement => $info) { ?>
       <div class="form-group">
         <label>Lavage <?php echo $info["label"]; ?></label>

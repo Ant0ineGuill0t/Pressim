@@ -9,6 +9,7 @@ use Pressim\Models\Product;
 class AdminController extends CoreController
 {
     public function admin(){
+        $this->checkAuthorization(['0']);
         $userList = User::findAll();
         $orderList = Order::findAll();
         $productList = Product::findAll();
@@ -23,6 +24,7 @@ class AdminController extends CoreController
     }
     public function addProduct()
     {
+        $this->checkAuthorization(['0']);
         $this->show(
             'admin/back-office-product-add'
         );
@@ -46,6 +48,7 @@ class AdminController extends CoreController
     }
     public function viewUpdateUser($id)
     {
+        $this->checkAuthorization(['0']);
         $userData =  User::find($id['id']);
         $this->show(
             'admin/back-office-user',
@@ -78,6 +81,7 @@ class AdminController extends CoreController
     }
     public function viewUpdateProduct($id)
     {
+        $this->checkAuthorization(['0']);
         $productData =  Product::find($id['id']);
         $this->show(
             'admin/back-office-product',

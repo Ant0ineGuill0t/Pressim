@@ -8,10 +8,20 @@ class OrderController extends CoreController
 {
     public function order()
     {
-        $this->show('order');
+        if(isset($_SESSION['user'])){
+            $token = $this->generateCSRFToken();
+            $this->show('order', ['token' => $token ]);
+        } else {
+            $this->addError("Vous devez vous connecter pour consulter cette page !");
+            $this->redirect('home');
+        }
     }
     public function create()
     {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            $this->addError("Jeton CSRF invalide");
+            $this->redirect('home');
+          }
         $depositDate = filter_input(INPUT_POST, 'deposit-date');
         $recoveryDate = filter_input(INPUT_POST, 'recovery-date');
         $amount = filter_input(INPUT_POST, 'amount',FILTER_SANITIZE_NUMBER_INT);

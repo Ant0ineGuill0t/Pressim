@@ -36,6 +36,7 @@ class ComposerStaticInit806ad72a51bf200dcb5f2909e9d87d13
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dispatcher' => __DIR__ . '/..' . '/benoclock/alto-dispatcher/Dispatcher.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

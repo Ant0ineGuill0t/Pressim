@@ -5,6 +5,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<form action="" method="POST">
+				<input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
 					<div class="form-group">
 						<label for="nom">Nom :</label>
 						<input type="text" id="nom" name="name" class="form-control" required>

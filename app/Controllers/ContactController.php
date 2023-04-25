@@ -8,10 +8,15 @@ class ContactController extends CoreController
 {
     public function contact()
     {
-        $this->show('contact');
+        $token = $this->generateCSRFToken();
+        $this->show('contact', ['token' => $token ]);
     }
     public function create()
     {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            $this->addError("Jeton CSRF invalide");
+            $this->redirect('home');
+        }
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);

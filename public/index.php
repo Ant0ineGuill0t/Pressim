@@ -135,6 +135,15 @@ $router->map(
 );
 $router->map(
     'GET',
+    '/403',
+    [
+        'controller' => 'MainController',
+        'method' => '403',
+    ],
+    '403'
+);
+$router->map(
+    'GET',
     '/admin',
     [
         'controller' => 'AdminController',

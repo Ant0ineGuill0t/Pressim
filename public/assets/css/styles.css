@@ -2,7 +2,7 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   background-color: #aca788;
-  margin-top: 200px;
+  margin: 8em 0;
 }
 header {
   position: fixed;

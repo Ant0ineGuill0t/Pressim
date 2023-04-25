@@ -49,10 +49,22 @@ const order = {
   handleRecoveryDate: function() {
     document.querySelector('#date-depot').addEventListener('change', function() {
       const depot = moment(this.value);
-      let dateRetour = depot.add(4, 'days');
-      while (dateRetour.weekday() === 6 || dateRetour.weekday() === 0) {
-        dateRetour = dateRetour.add(1, 'days');
+      let days = 0;
+      let dateRetour = 0;
+      let addDay = 0;
+      while (days < 4) {
+        dateRetour = depot.add(1, 'days');
+        if (dateRetour.weekday() === 6 || dateRetour.weekday() === 0){
+          addDay++;
+        }
+        days++;
       }
+      dateRetour.add(addDay, 'days');
+      if (dateRetour.weekday() === 6) { 
+        dateRetour = dateRetour.add(2, 'days');
+    } else if (dateRetour.weekday() === 0) {
+        dateRetour = dateRetour.add(1, 'days');
+    }
       document.querySelector('#date-retour').value = dateRetour.format('DD/MM/YYYY');
     });
   },

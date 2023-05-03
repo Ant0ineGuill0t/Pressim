@@ -7,7 +7,6 @@ $vetements = array(
     "veste" => array("label" => "Veste", "prix" => 10),
     "manteau" => array("label" => "Manteau", "prix" =>15)
 );
-$items = array_keys($vetements);
 ?>
 <div class="container">
   <form action="" method="POST">

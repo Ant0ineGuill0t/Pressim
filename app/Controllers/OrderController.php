@@ -30,7 +30,6 @@ class OrderController extends CoreController
         $skirt = filter_input(INPUT_POST, 'jupe',FILTER_SANITIZE_NUMBER_INT);
         $jacket = filter_input(INPUT_POST, 'veste',FILTER_SANITIZE_NUMBER_INT);
         $coat = filter_input(INPUT_POST, 'manteau',FILTER_SANITIZE_NUMBER_INT);
-
         $depositDate = preg_replace("/[^0-9\-]/", "", $depositDate);
         $sanitizeDepositDate= date("Y-m-d", strtotime($depositDate));
         $formattedRecoveryDate = str_replace('/', '-', $recoveryDate);

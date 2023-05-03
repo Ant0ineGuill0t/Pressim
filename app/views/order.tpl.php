@@ -1,30 +1,19 @@
-<?php
-// Tableau associatif contenant les informations sur les différents types de vêtements
-$vetements = array(
-    "chemise" => array("label" => "Chemise", "prix" => 7),
-    "pantalon" => array("label" => "Pantalon", "prix" => 8),
-    "jupe" => array("label" => "Jupe", "prix" => 7),
-    "veste" => array("label" => "Veste", "prix" => 10),
-    "manteau" => array("label" => "Manteau", "prix" =>15)
-);
-?>
 <div class="container">
   <form action="" method="POST">
     <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
-    <?php foreach ($vetements as $vetement => $info) { ?>
+      <?php foreach ($products as $product) { ?>
       <div class="form-group">
-        <label>Lavage <?php echo $info["label"]; ?></label>
-        <div class="btn-group d-flex" role="group" aria-label="Lavage <?php echo $info["label"]; ?>">
-          <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-0" value="0" data="0" autocomplete="off" checked>
-          <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-0">Pas de lavage</label>
+        <label>Lavage <?php echo $product->getName(); ?></label>
+        <div class="btn-group d-flex" role="group" aria-label="Lavage <?php echo $product->getName(); ?>">
+          <input type="radio" class="btn-check" name="<?php echo $product->getId(); ?>" id="lavage-<?php echo $product->getName(); ?>-0" value="0" data="0" autocomplete="off" checked>
+          <label class="btn btn-outline-light" for="lavage-<?php echo $product->getName(); ?>-0">Pas de lavage</label>
           <?php for ($i = 1; $i <= 5; $i++) { ?>
-            <input type="radio" class="btn-check" name="<?php echo $vetement; ?>" id="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>" value=<?php echo $i ?> data="<?php echo $info["prix"] * $i; ?>" autocomplete="off">
-            <label class="btn btn-outline-light" for="lavage-<?php echo $vetement; ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?> <?php echo $info["label"]; ?> (<?php echo $info["prix"] * $i; ?> €)</label>
+            <input type="radio" class="btn-check" name="<?php echo $product->getId(); ?>" id="lavage-<?php echo $product->getName(); ?>-<?php echo $i; ?>" value=<?php echo $i ?> data="<?php echo $product->getPrice() * $i; ?>" autocomplete="off">
+            <label class="btn btn-outline-light" for="lavage-<?php echo $product->getName(); ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?> <?php echo $product->getName(); ?> (<?php echo $product->getPrice() * $i; ?> €)</label>
           <?php } ?>
         </div>
       </div>
-    <?php } ?>
-
+      <?php } ?>
     <div class="form-group">
       <label for="date-depot">Date de dépôt:</label>
       <input name="deposit-date" type="date" class="form-control" id="date-depot" min="<?php echo date('Y-m-d'); ?>" required>
@@ -43,4 +32,3 @@ $vetements = array(
     <button type="submit" class="btn btn-primary">Passer la commande</button>
   </form>
 </div>
-

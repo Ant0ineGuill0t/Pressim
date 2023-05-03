@@ -3,14 +3,22 @@
 namespace Pressim\Controllers;
 
 use Pressim\Models\Order;
+use Pressim\Models\Product;
 
 class OrderController extends CoreController 
 {
     public function order()
     {
+        $products = Product::findAll();
         if(isset($_SESSION['user'])){
             $token = $this->generateCSRFToken();
-            $this->show('order', ['token' => $token ]);
+            $this->show(
+                'order',
+                [
+                    'token' => $token,
+                    'products' => $products,
+                ]
+            );
         } else {
             $this->addError("Vous devez vous connecter pour consulter cette page !");
             $this->redirect('home');

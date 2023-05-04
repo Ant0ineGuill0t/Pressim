@@ -3,14 +3,22 @@
 namespace Pressim\Controllers;
 
 use Pressim\Models\Order;
+use Pressim\Models\Product;
 
 class OrderController extends CoreController 
 {
     public function order()
     {
+        $products = Product::findAll();
         if(isset($_SESSION['user'])){
             $token = $this->generateCSRFToken();
-            $this->show('order', ['token' => $token ]);
+            $this->show(
+                'order',
+                [
+                    'token' => $token,
+                    'products' => $products,
+                ]
+            );
         } else {
             $this->addError("Vous devez vous connecter pour consulter cette page !");
             $this->redirect('home');
@@ -25,11 +33,11 @@ class OrderController extends CoreController
         $depositDate = filter_input(INPUT_POST, 'deposit-date');
         $recoveryDate = filter_input(INPUT_POST, 'recovery-date');
         $amount = filter_input(INPUT_POST, 'amount',FILTER_SANITIZE_NUMBER_INT);
-        $shirt = filter_input(INPUT_POST, 'chemise',FILTER_SANITIZE_NUMBER_INT);
-        $pants = filter_input(INPUT_POST, 'pantalon',FILTER_SANITIZE_NUMBER_INT);
-        $skirt = filter_input(INPUT_POST, 'jupe',FILTER_SANITIZE_NUMBER_INT);
-        $jacket = filter_input(INPUT_POST, 'veste',FILTER_SANITIZE_NUMBER_INT);
-        $coat = filter_input(INPUT_POST, 'manteau',FILTER_SANITIZE_NUMBER_INT);
+        $shirt = filter_input(INPUT_POST, 'shirt',FILTER_SANITIZE_NUMBER_INT);
+        $pants = filter_input(INPUT_POST, 'pants',FILTER_SANITIZE_NUMBER_INT);
+        $skirt = filter_input(INPUT_POST, 'skirt',FILTER_SANITIZE_NUMBER_INT);
+        $jacket = filter_input(INPUT_POST, 'jacket',FILTER_SANITIZE_NUMBER_INT);
+        $coat = filter_input(INPUT_POST, 'coat',FILTER_SANITIZE_NUMBER_INT);
         $depositDate = preg_replace("/[^0-9\-]/", "", $depositDate);
         $sanitizeDepositDate= date("Y-m-d", strtotime($depositDate));
         $formattedRecoveryDate = str_replace('/', '-', $recoveryDate);

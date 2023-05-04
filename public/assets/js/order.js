@@ -18,34 +18,27 @@ const order = {
       }
     }
   },
-      
+
   handleTotalPrice: function() {
-    const items = ['chemise', 'pantalon', 'jupe', 'veste', 'manteau'];
-    const inputs = {};
-    const totalPriceInput = document.querySelector('#total-price'); 
-    
+    console.log('handleTotalPrice');
+    const totalPriceInput = document.querySelector('#total-price');
+    const inputs = document.querySelectorAll('input[type="radio"]');
     const handleUpdateTotalPrice = () => {
       let totalPrice = 0;
-      items.forEach((item) => {
-        let selectedData = 0;
-        inputs[item].forEach((input) => {
-          if (input.checked) {
-            selectedData = parseInt(input.getAttribute("data"));
-          }
-        });
-        totalPrice += selectedData;
+      inputs.forEach((input) => {
+        if (input.checked) {
+          let selectedData = parseInt(input.getAttribute("data"));
+          totalPrice += selectedData;
+        }
       });
       totalPriceInput.value = totalPrice;
     };
-    
-    items.forEach((item) => {
-      inputs[item] = document.querySelectorAll(`input[name="${item}"]`);
-      inputs[item].forEach((input) => {
-        input.addEventListener('click', handleUpdateTotalPrice);
-      });
+  
+    inputs.forEach((input) => {
+      input.addEventListener('change', handleUpdateTotalPrice);
     });
   },
-
+  
   handleRecoveryDate: function() {
     document.querySelector('#date-depot').addEventListener('change', function() {
       const depot = moment(this.value);

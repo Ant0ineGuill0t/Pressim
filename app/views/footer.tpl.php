@@ -18,3 +18,4 @@
 <script src="<?= $viewData['baseUri']; ?>/assets/js/form.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="<?= $viewData['baseUri']; ?>/assets/js/messages.js"></script>

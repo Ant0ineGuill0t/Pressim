@@ -15,6 +15,8 @@ class Order {
     private $shirt;
     private $coat;
     private $skirt;
+    private $created_at;
+    private $user_id;
 
     public static function find($id)
     {
@@ -39,8 +41,8 @@ class Order {
     {
         $pdo = Database::getPDO();
         $sql = "
-            INSERT INTO `order` (deposit_date, recovery_date, amount, pants, jacket, shirt, coat, skirt)
-            VALUES (:deposit_date,:recovery_date,:amount,:pants,:jacket, :shirt, :coat, :jacket)
+            INSERT INTO `order` (deposit_date, recovery_date, amount, pants, jacket, shirt, coat, skirt, user_id)
+            VALUES (:deposit_date,:recovery_date,:amount,:pants,:jacket, :shirt, :coat, :skirt, :user_id)
         ";
         $pdoStatement = $pdo->prepare($sql);
         $pdoStatement->bindValue(':deposit_date', $this->deposit_date);
@@ -51,6 +53,7 @@ class Order {
         $pdoStatement->bindValue(':shirt', $this->shirt);
         $pdoStatement->bindValue(':coat', $this->coat);
         $pdoStatement->bindValue(':skirt', $this->skirt);
+        $pdoStatement->bindValue(':user_id', $this->user_id);
         $success = $pdoStatement->execute();
 
         if ($success) {
@@ -226,5 +229,29 @@ class Order {
     {
         $this->skirt = $skirt;
         return $this;
+    }
+    /**
+     * Get the value of created_at
+     */ 
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+     /**
+     * Set the value of user_id
+     *
+     * @return  self
+     */ 
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+        return $this;
+    }
+    /**
+     * Get the value of user_id
+     */ 
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 }

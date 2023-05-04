@@ -4,6 +4,7 @@ namespace Pressim\Controllers;
 
 use Pressim\Models\Order;
 use Pressim\Models\Product;
+use Pressim\Models\User;
 
 class OrderController extends CoreController 
 {
@@ -43,6 +44,8 @@ class OrderController extends CoreController
         $formattedRecoveryDate = str_replace('/', '-', $recoveryDate);
         $recoveryDate = preg_replace("/[^0-9\-]/", "", $formattedRecoveryDate);
         $sanitizeRecoveryDate= date("Y-m-d", strtotime($recoveryDate));
+        $user = $_SESSION['user'];
+        $user_id = $user->getId();
         $newOrder = new Order;
         $newOrder->setDepositDate($sanitizeDepositDate);
         $newOrder->setRecoveryDate($sanitizeRecoveryDate);
@@ -52,6 +55,7 @@ class OrderController extends CoreController
         $newOrder->setSkirt($skirt);
         $newOrder->setJacket($jacket);
         $newOrder->setCoat($coat);
+        $newOrder->setUserId($user_id);
         $success = $newOrder->insert();
         if($success) {
             $_SESSION['successMessages'][] = "Commande numéro ". $newOrder->getId() . " bien crée !";

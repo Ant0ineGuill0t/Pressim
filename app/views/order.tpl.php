@@ -5,10 +5,10 @@
       <div class="form-group">
         <label>Lavage <?php echo $product->getName(); ?></label>
         <div class="btn-group d-flex" role="group" aria-label="Lavage <?php echo $product->getName(); ?>">
-          <input type="radio" class="btn-check" name="<?php echo $product->getId(); ?>" id="lavage-<?php echo $product->getName(); ?>-0" value="0" data="0" autocomplete="off" checked>
+          <input type="radio" class="btn-check" name="<?php echo $product->getName(); ?>" id="lavage-<?php echo $product->getName(); ?>-0" value="0" data="0" autocomplete="off" checked>
           <label class="btn btn-outline-light" for="lavage-<?php echo $product->getName(); ?>-0">Pas de lavage</label>
           <?php for ($i = 1; $i <= 5; $i++) { ?>
-            <input type="radio" class="btn-check" name="<?php echo $product->getId(); ?>" id="lavage-<?php echo $product->getName(); ?>-<?php echo $i; ?>" value=<?php echo $i ?> data="<?php echo $product->getPrice() * $i; ?>" autocomplete="off">
+            <input type="radio" class="btn-check" name="<?php echo $product->getName(); ?>" id="lavage-<?php echo $product->getName(); ?>-<?php echo $i; ?>" value=<?php echo $i ?> data="<?php echo $product->getPrice() * $i; ?>" autocomplete="off">
             <label class="btn btn-outline-light" for="lavage-<?php echo $product->getName(); ?>-<?php echo $i; ?>">Lavage <?php echo $i; ?> <?php echo $product->getName(); ?> (<?php echo $product->getPrice() * $i; ?> €)</label>
           <?php } ?>
         </div>

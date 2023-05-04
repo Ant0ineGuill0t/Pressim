@@ -20,24 +20,24 @@ const order = {
   },
 
   handleTotalPrice: function() {
+    console.log('handleTotalPrice');
     const totalPriceInput = document.querySelector('#total-price');
     const inputs = document.querySelectorAll('input[type="radio"]');
-  
     const handleUpdateTotalPrice = () => {
       let totalPrice = 0;
       inputs.forEach((input) => {
         if (input.checked) {
-          totalPrice += parseInt(input.getAttribute("data"));
+          let selectedData = parseInt(input.getAttribute("data"));
+          totalPrice += selectedData;
         }
       });
       totalPriceInput.value = totalPrice;
     };
   
     inputs.forEach((input) => {
-      input.addEventListener('click', handleUpdateTotalPrice);
+      input.addEventListener('change', handleUpdateTotalPrice);
     });
   },
-  
   
   handleRecoveryDate: function() {
     document.querySelector('#date-depot').addEventListener('change', function() {

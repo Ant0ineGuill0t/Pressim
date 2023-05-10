@@ -32,7 +32,9 @@ class Order {
     public static function findAll()
     {
         $pdo = Database::getPDO();
-        $sql = 'SELECT * FROM `order`';
+        $sql = 'SELECT `order`.*, `user`.name AS user_id
+        FROM `order`
+        JOIN `user` ON `order`.user_id = `user`.id';
         $pdoStatement = $pdo->query($sql);
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $results;  

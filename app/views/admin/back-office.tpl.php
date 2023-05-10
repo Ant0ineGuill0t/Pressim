@@ -6,6 +6,7 @@
                 <thead>
                     <tr>
                     <th>Numéro de commande</th>
+                    <th>Client</th>
                     <th>Date de création</th>
                     <th>Date de dépôt</th>
                     <th>Date de reprise</th>
@@ -17,6 +18,7 @@
                     <?php foreach($viewData['orderList'] as $orderObject): ?>
                     <tr>
                         <td><?php echo $orderObject->getId(); ?></td>
+                        <td><?php echo $orderObject->getUserId(); ?></td>
                         <td><?php echo $orderObject->getCreatedAt(); ?></td>
                         <td><?php echo $orderObject->getDepositDate(); ?></td>
                         <td><?php echo $orderObject->getRecoveryDate(); ?></td>

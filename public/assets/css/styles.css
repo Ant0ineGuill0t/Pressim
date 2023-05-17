@@ -4,6 +4,7 @@ body {
   background-color: #aca788;
   margin: 8em 0;
 }
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -57,6 +58,7 @@ header {
   padding: 1rem;
   max-width: 100%;
 }
+/* Footer */
 footer {
   background-color: #807c62;
   padding: 20px 0;

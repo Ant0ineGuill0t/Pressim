@@ -6,7 +6,6 @@
         <h2>Connexion</h2>
         <p>Pour passer une commande sur Pressim, connectez-vous à votre compte. Cela vous permettra de sauvegarder vos informations de livraison pour une expérience d'achat plus rapide et plus facile.</p>
         <div class="form-group">
-          <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
           <label for="email">Adresse mail:</label>
           <input name="email" type="email" class="form-control" id="email" placeholder="adresse mail" required>
         </div>

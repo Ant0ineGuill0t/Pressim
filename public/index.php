@@ -39,7 +39,7 @@ $router->map(
     '/login',
     [
         'controller' => 'UserController',
-        'method' => 'connect',
+        'method' => 'connect'
     ],
     'connect'
 );

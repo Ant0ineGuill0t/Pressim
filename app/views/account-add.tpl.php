@@ -1,6 +1,7 @@
 <section class="container">
     <h2>Créer un compte</h2>
     <form action="" method="POST">
+    <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
       <div class="form-group">
         <label for="nom">Nom:</label>
         <input name="name" type="text" class="form-control" id="nom" placeholder="Entrez votre nom" required>
